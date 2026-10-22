@@ -60,25 +60,35 @@ namespace Adv_Assignment_02
 
             #region TransformProductsMethode
 
-            Console.WriteLine("---Summary List---");
-            List<string> summaryList =  Product.TransformProducts(ProductCatalog.catalog, p => $"{p.Name} (${p.Price})");
-            foreach (var item in summaryList)
+            //Console.WriteLine("---Summary List---");
+            //List<string> summaryList =  Product.TransformProducts(ProductCatalog.catalog, p => $"{p.Name} (${p.Price})");
+            //foreach (var item in summaryList)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //Console.WriteLine();
+
+            //Console.WriteLine("---Price Labels---");
+            //List<string> priceLapel = Product.TransformProducts(ProductCatalog.catalog, p => $"{p.Name}: {(p.Price > 100 ? "Expensive!" : "Affordable")}");
+            //foreach (var item in priceLapel)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //Console.WriteLine();
+
+
+
+
+            #endregion
+
+            #region FilterProduct Method
+            Console.WriteLine("---Low-Stock Alert---");
+            List<Product> alert = Product.FilterProducts(ProductCatalog.catalog, p => p.Stock < 20);
+            foreach (var item in alert)
             {
-                Console.WriteLine(item);
+                Console.WriteLine($"[LOW STOCK] {item.Name} : only {item.Stock} Left!");
             }
             Console.WriteLine();
-
-            Console.WriteLine("---Price Labels---");
-            List<string> priceLapel = Product.TransformProducts(ProductCatalog.catalog, p => $"{p.Name}: {(p.Price > 100 ? "Expensive!" : "Affordable")}");
-            foreach (var item in priceLapel)
-            {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine();
-
-
-
-
             #endregion
         }
     }

@@ -51,6 +51,21 @@ public class Product
         return summaryList;
     }
 
+
+
+    public static List<Product> FilterProducts(List<Product> products, Predicate<Product>alert)
+    {
+        List<Product> result = new List<Product>();
+        foreach (Product product in products)
+        {
+            if (alert(product))
+            {
+                result.Add(product);
+            }
+        }
+        return result;
+    }
+
     #endregion
 }
 
