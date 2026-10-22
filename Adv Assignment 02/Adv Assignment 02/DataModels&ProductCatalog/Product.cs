@@ -30,6 +30,18 @@ public class Product
     }
 
 
+
+    public static void PrintReport(List<Product>products, Action<Product> printProduct) // Action accepts a Product and performs an operation without returning a value
+    {
+        foreach (var item in products)
+        {
+            printProduct(item);
+        }
+    }
+
+
+    
+
     #endregion
 }
 
