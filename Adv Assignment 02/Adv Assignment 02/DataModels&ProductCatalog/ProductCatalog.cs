@@ -2,7 +2,7 @@
 
 public class ProductCatalog
 {
-    public List<Product> catalog = new()
+    public static List<Product> catalog = new()
 {
     new Product { Id=1, Name="Laptop", Category="Electronics", Price=1200, Stock=10 },
     new Product { Id=2, Name="Phone", Category="Electronics", Price=800, Stock=25 },
