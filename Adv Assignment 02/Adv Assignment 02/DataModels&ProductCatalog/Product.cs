@@ -40,7 +40,16 @@ public class Product
     }
 
 
-    
+    public static List<string> TransformProducts(List<Product> products, Func<Product, string> transform)//Func transforms a Product into a string
+    {
+        List<string> summaryList = new List<string>();
+
+        foreach (Product product in products)
+        {
+            summaryList.Add(transform(product));
+        }
+        return summaryList;
+    }
 
     #endregion
 }
